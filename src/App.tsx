@@ -1,24 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Card from './components/Card';
+import "./App.scss"
 
-function App() {
+const App: React.FC = () => {
+
+  function handleSubmit(number: string, mounth: string, year: string, cvv: string) {
+    alert("Your payment information is valid, thank you " + number.substr(12, 15) + " " + year + "/" + mounth)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Enter your payment information below</h2>
+      <Card handleSubmit={handleSubmit} />
     </div>
   );
 }

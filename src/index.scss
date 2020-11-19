@@ -1,0 +1,26 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+$base-bgcolor: #f1f1f1;
+$base-color: #171a1c;
+$base-font-weight: 300;
+$base-font-size: 1rem;
+$base-line-height: 1.5;
+$base-font-family: Source Sans Pro;
+$base-font-family-fallback: sans-serif;
+
+body {
+  background-color: $base-bgcolor;
+  color: $base-color;
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height}
+      $base-font-family,
+    $base-font-family-fallback;
+  margin: 0;
+  min-height: 100%;
+  padding: 5vw 0;
+}

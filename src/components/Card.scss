@@ -1,0 +1,127 @@
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+
+.text {
+  &--center {
+    text-align: center;
+  }
+}
+
+$card-bgcolor: #171a1c;
+$card-border-radius: 1rem;
+$card-color: #47474e;
+$card-padding: 2rem;
+
+.card {
+  width: 40%;
+  background-color: $card-bgcolor;
+  border-radius: $card-border-radius;
+  color: $card-color;
+  padding: $card-padding;
+  font-family: Abel;
+
+  &__header {
+    @include clearfix();
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    color: #fff;
+    float: left;
+    font-size: 1.5rem;
+  }
+
+  &__number {
+    &__input {
+      font-size: 2rem;
+    }
+  }
+
+  &__expiration {
+    float: left;
+    &__input {
+      width: 1.75rem;
+    }
+  }
+
+  &__ccv {
+    float: right;
+
+    &__input {
+      width: 2rem;
+    }
+  }
+}
+
+$input-color: #fff;
+
+input {
+  background-color: transparent;
+  border: 0;
+  color: $input-color;
+  font: inherit;
+  width: auto;
+
+  &::placeholder {
+    color: $input-color;
+  }
+}
+
+label {
+  font-size: 1.1rem;
+  display: block;
+}
+
+.form {
+  @include clearfix();
+  &__field {
+    margin-bottom: 1.5rem;
+  }
+
+  input {
+    outline: 0;
+
+    &[type="email"],
+    &[type="password"] {
+      width: 100%;
+    }
+  }
+}
+.card__expiration {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+
+  select {
+    background-color: $card-bgcolor;
+    color: #fff;
+    border: 0px;
+    font-size: 1rem;
+    option {
+      
+      background-color: $card-color;
+    }
+  }
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.5rem;
+}
+
+$link-color: #171a1c;
+a {
+  color: $link-color;
+}
